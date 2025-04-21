@@ -1,1 +1,245 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息采集表</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: '微软雅黑', sans-serif;
+            margin: 40px;
+        }
+        form {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border: 2px solid #4682b4;
+        }
+        td, th {
+            border: 1px solid #4682b4;
+            padding: 12px;
+            vertical-align: top;
+        }
+        .icon {
+            color: #4682b4;
+            margin-right: 8px;
+        }
+        .photo {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: '微软雅黑', sans-serif;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit {
+            background-color: #4682b4;
+            color: white;
+        }
+        .clear {
+            background-color: #f44336;
+            color: white;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <caption>个人信息采集表</caption>
+            
+            <tr>
+                <td colspan="2">
+                    <label>姓名：</label>
+                    <input type="text" name="name" value="阙雨豪" required>
+                </td>
+                <td>
+                    <label>性别：</label>
+                    <select name="gender" required>
+                        <option value="男" selected>男</option>
+                        <option value="女">女</option>
+                    </select>
+                </td>
+                <td>
+                    <label>年龄：</label>
+                    <input type="number" name="age" value="20" min="18" max="60" required>
+                </td>
+                <td rowspan="4" width="150">
+                    <img src="profile.jpg" class="photo">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>籍贯：</label>
+                    <input type="text" name="hometown" value="湖南醴陵" required>
+                </td>
+                <td>
+                    <label>联系电话：</label>
+                    <input type="tel" name="phone" value="18853560595" pattern="[0-9]{11}" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>电子邮箱：</label>
+                    <input type="email" name="email" value="3293025228@qq.com" required>
+                </td>
+                <td colspan="2">
+                    <label>学历：</label>
+                    <select name="education" required>
+                        <option value="高中">高中</option>
+                        <option value="大专">大专</option>
+                        <option value="本科" selected>本科</option>
+                        <option value="硕士">硕士</option>
+                        <option value="博士">博士</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>健康状况：</label>
+                    <select name="health" required>
+                        <option value="优秀">优秀</option>
+                        <option value="良好" selected>良好</option>
+                        <option value="一般">一般</option>
+						 </select>
+						                </td>
+						                <td colspan="3">
+						                    <label>婚姻状况：</label>
+						                    <select name="marital" required>
+						                        <option value="未婚" selected>未婚</option>
+						                        <option value="已婚">已婚</option>
+						                        <option value="离异">离异</option>
+						                    </select>
+						                </td>
+						            </tr>
+						
+						            <tr>
+						                <th colspan="5">
+						                    <i class="fas fa-briefcase icon"></i>求职意向：
+						                    <select name="job_intention" required>
+						                        <option value="前端开发工程师" selected>前端开发工程师</option>
+						                        <option value="后端开发工程师">后端开发工程师</option>
+						                        <option value="全栈开发工程师">全栈开发工程师</option>
+						                        <option value="UI设计师">UI设计师</option>
+						                        <option value="产品经理">产品经理</option>
+						                    </select>
+						                </th>
+						            </tr>
+						            <tr>
+						                <td colspan="2">
+						                    <label>专业：</label>
+						                    <input type="text" name="major" value="软件工程" required>
+						                </td>
+						                <td colspan="3">
+						                    <label>毕业院校：</label>
+						                    <input type="text" name="university" value="鲁东大学" required>
+						                </td>
+						            </tr>
+						
+						            <tr>
+						                <th colspan="5">
+						                    <i class="fas fa-certificate icon"></i>技能证书
+						                </th>
+						            </tr>
+						            <tr>
+						                <td colspan="5">
+						                    <textarea name="certificates">CET-4 英语四级</textarea>
+						                </td>
+						            </tr>
+						
+						            <tr>
+						                <th colspan="5">
+						                    <i class="fas fa-project-diagram icon"></i>项目经历
+						                </th>
+						            </tr>
+						            <tr>
+						                <td colspan="5">
+						                    <textarea name="project_experience">目前尚无</textarea>
+						                </td>
+						            </tr>
+						
+						            <tr>
+						                <th colspan="5">
+						                    <i class="fas fa-comment-dots icon"></i>自我评价
+						                </th>
+						            </tr>
+						            <tr>
+						                <td colspan="5">
+						                    <textarea name="self_evaluation">我是一名软件工程专业的毕业生/在校生，通过系统的专业学习，我掌握了扎实的编程基础和软件开发流程。在校期间，我深入学习了数据结构、算法、数据库系统、软件测试等核心课程，并参与了多个课程项目的开发，培养了良好的工程实践能力和团队协作精神。
+						
+						在技术能力方面，我熟练使用Java/Python等编程语言，熟悉Spring Boot/Django等开发框架，了解前端开发技术如HTML/CSS/JavaScript。我特别注重代码质量和可维护性，习惯编写规范的代码并撰写详细的文档说明。在项目开发中，我善于分析需求、设计架构并解决技术难题。
+						
+						除了专业技术外，我保持着健康的生活方式。跑步是我坚持多年的习惯，它不仅锻炼了我的体魄，更培养了我的毅力和耐力。我每周会安排3-4次跑步训练，参加过多次半程马拉松比赛。羽毛球则是我最喜爱的球类运动，这项运动锻炼了我的反应能力和团队配合意识，也让我结识了许多志同道合的朋友。
+						
+						我认为软件工程师不仅需要技术能力，更需要良好的身体素质和心理素质。运动带给我的不仅是健康的体魄，更是面对挑战时的坚韧态度。在未来的工作中，我将继续保持学习热情，提升专业技能，同时平衡好工作与生活，以饱满的精神状态迎接每一个挑战。</textarea>
+						                </td>
+						            </tr>
+						
+						            <tr>
+						                <th colspan="5">
+						                    <i class="fas fa-star icon"></i>个人特长与爱好
+						                </th>
+						            </tr>
+						            <tr>
+						                <td colspan="5">
+						                    <div class="checkbox-group">
+						                        <label><input type="checkbox" name="hobby" value="编程"> 编程</label>
+						                        <label><input type="checkbox" name="hobby" value="跑步" checked> 跑步</label>
+						                        <label><input type="checkbox" name="hobby" value="羽毛球" checked> 羽毛球</label>
+						                        <label><input type="checkbox" name="hobby" value="阅读"> 阅读</label>
+						                        <label><input type="checkbox" name="hobby" value="音乐"> 音乐</label>
+						                        <label><input type="checkbox" name="hobby" value="旅游"> 旅游</label>
+						                    </div>
+						                </td>
+						            </tr>
+						        </table>
+						
+						        <div class="buttons">
+						            <button type="submit" class="submit">提交</button>
+						            <button type="reset" class="clear">清除</button>
+						        </div>
+						    </form>
+						</body>
+						</html>
